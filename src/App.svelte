@@ -4,6 +4,7 @@
   import Home from '$pages/Home.svelte';
   import Login from '$pages/Login.svelte';
   import Signup from '$pages/Signup.svelte';
+  import AddPost from '$pages/AddPost.svelte';
   import { SvelteToast } from '@zerodevx/svelte-toast';
 </script>
 
@@ -18,5 +19,8 @@
   </Route>
   <Route path="/signup">
     <Signup />
+  </Route>
+  <Route path="/add">
+    <AddPost />
   </Route>
 </Router>
