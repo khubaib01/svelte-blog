@@ -11,13 +11,13 @@
 
 @layer components {
   .btn {
-    @apply px-8 py-3 font-semibold rounded bg-teal-700 text-gray-100 hover:bg-teal-900 active:scale-95;
+    @apply px-8 py-3 font-semibold rounded bg-teal-700 text-gray-100 hover:bg-teal-900 active:scale-95 transition ease-in-out duration-500;
   }
   .btn-outline {
-    @apply px-8 py-3 font-semibold border rounded border-teal-500 text-teal-500 hover:bg-slate-800 active:scale-95;
+    @apply px-8 py-3 font-semibold border rounded border-teal-500 text-teal-500 hover:bg-slate-800 active:scale-95 transition duration-500;
   }
   .btn-rounded {
-    @apply px-8 py-3 font-semibold rounded-full bg-teal-700 text-gray-100 hover:bg-teal-900 active:scale-95;
+    @apply px-8 py-3 font-semibold rounded-full bg-teal-700 text-gray-100 hover:bg-teal-900 active:scale-95 transition duration-500;
   }
   .input {
     @apply w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:border-teal-600 focus:ring-teal-600;
