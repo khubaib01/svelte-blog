@@ -5,7 +5,7 @@ class UserApi {
   client: AxiosInstance;
   constructor() {
     this.client = axios.create({
-      baseURL: 'http://localhost:5000/api/users',
+      baseURL: 'https://friendly-sorry-82585.herokuapp.com/api/users',
     });
   }
 
