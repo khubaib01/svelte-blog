@@ -1,7 +1,32 @@
 <script lang="ts">
+  import { postApi } from '$lib/api/postApi';
+
+  import type { IPost } from '$lib/interfaces';
+  import { ErrorToast, SuccessToast } from '$lib/toasts';
+  import JSConfetti from 'js-confetti';
+  import { useNavigate } from 'svelte-navigator';
+
   let title: string;
   let tags: string;
   let postbody: string;
+  const jsConfetti = new JSConfetti();
+  const navigate = useNavigate();
+
+  async function post(): Promise<void> {
+    const newPost: IPost = { title, tags, body: postbody };
+    try {
+      const addedPost: IPost = await postApi.addPost(newPost);
+      if (addedPost._id) {
+        await jsConfetti.addConfetti();
+        navigate('/');
+        SuccessToast('Post added. We are in homepage.');
+      } else {
+        ErrorToast('Something happened. Try again.');
+      }
+    } catch (error) {
+      ErrorToast('Something happened. Try again.');
+    }
+  }
 </script>
 
 <section class="container max-w-screen-xl mt-8">
@@ -34,6 +59,6 @@
         class="input text-lg mt-2 min-h-[300px]"
       />
     </div>
-    <button class="btn-rounded w-full">Post</button>
+    <button class="btn-rounded w-full" on:click={post}>Post</button>
   </div>
 </section>

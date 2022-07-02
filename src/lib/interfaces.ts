@@ -15,3 +15,11 @@ export interface ValidUser {
   status?: string;
   password?: string;
 }
+
+export interface IPost {
+  _id?: string;
+  userid?: string;
+  title: string;
+  tags: string;
+  body: string;
+}
